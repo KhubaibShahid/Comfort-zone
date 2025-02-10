@@ -10,12 +10,15 @@ export async function GET(req : Request) {
             return NextResponse.json({statusbar: 422, err : "missing id"});
         }
 
-        const data = await client.fetch(`*[_type == "product" && _id == "${id}"]`);
-        if (data.length) {
-            return NextResponse.json(data);
-        } else {
-            return NextResponse.json({statusbar : 404, err: "not found"})
+        if (client) {
+            const data = await client.fetch(`*[_type == "product" && _id == "${id}"]`);
+            if (data.length) {
+                return NextResponse.json(data);
+            } else {
+                return NextResponse.json({statusbar : 404, err: "not found"})
+            }
         }
+
     }catch(err) {
         console.log("error", err)
         return NextResponse.json({statusbar: 500, err: "error"})

@@ -7,12 +7,14 @@ export async function GET(request : Request) {
         const category = url.searchParams.get("category");
         if (category) {
             try{
-                console.log("params")
-                const data = await client.fetch(`*[_type == "product" && category == "${category}"]`);
-                if (data.length != 0) {
-                    return NextResponse.json(data);
-                } else {
-                    return NextResponse.json({statusbar : 404, message : "not found"})
+                if (client) {
+                    console.log("params")
+                    const data = await client.fetch(`*[_type == "product" && category == "${category}"]`);
+                    if (data.length != 0) {
+                        return NextResponse.json(data);
+                    } else {
+                        return NextResponse.json({statusbar : 404, message : "not found"})
+                    }
                 }
             }
             catch(err) {

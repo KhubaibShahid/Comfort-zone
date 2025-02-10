@@ -10,6 +10,7 @@ export async function POST(request: Request) {
     if (body.name.length > 2) {
       if (body.email.match(regex)) {
         if (body.password.length > 7) {
+          if (client) {
             const result = await client.create({
               _type: "user",
               username: body.name,
@@ -19,6 +20,7 @@ export async function POST(request: Request) {
               orders: [],
             });
             console.log(result);
+          }
 
         return NextResponse.json({statusbar : 200, message : "account created"})
         } else {
