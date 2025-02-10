@@ -11,7 +11,7 @@ const handleLogin = async (prev: any, formData: FormData) => {
       id : 112233
     };
 
-    const res = await fetch(`https://e-commerce-ui-omega.vercel.app/api/login`, {
+    const res = await fetch(`https://comfort-zone-chi.vercel.app/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application.json",

@@ -19,7 +19,7 @@ const handleSignup = async (prevState: any, formData: FormData) => {
 
     console.log(fields, "fields");
 
-    const res = await fetch(`https://e-commerce-ui-omega.vercel.app/api/signup`, {
+    const res = await fetch(`https://comfort-zone-chi.vercel.app/api/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
