@@ -1,0 +1,35 @@
+ Migration steps and tools used : 
+
+                        first understanding the data schema and given migration steps to follow.
+                        
+                        create and install a seprate sanity project by run the command "sanity init".
+
+                        create a file named product.ts in schemaTypes and then define and export the products schema from file.
+ 
+                        open index.ts file and import the defined schema from product.ts and then store the products in a given array of schemaTypes.
+                        
+                        create a file of schema.ts in which import products from product.ts, createScehma from sanity and schemaTypes from index.ts,
+                        export the createSchema method and pass the object containing two properties, the first property is name with the value of string 
+                        "default" and the second property is types with the value of method schemaTypes.concat() and pass the array containing products.
+            
+                        deploy the project by run the command "sanity deploy".
+
+
+ Adjustments made to schemas : 
+                       
+                        there are some changes applied to data schema, add id, isFeaturedProduct, discountPercentage, stockLevel properties and change 
+                        mainImage to imagePath delete info, color and SKU properties.
+
+
+ API Integration Steps : 
+
+                        create sanityClint.ts file in app folder, import createClient from @sanity/client, call the method createClient and pass argument,
+                        then store and export the return value in constant name client.
+
+                        create a folder of allProduct into api in app directory, create a route.tsx file in allProduct folder, import client from                       
+                        sanityClient.ts file and then create a get request function and call the client.fetch method into the function, fatch all data
+                        from sanity and return it through NextResponse 
+                        
+                        open the files in which data be displayed, create a async function, fetch the data from api, store the fetched data in constant and 
+                        then set the data into state, call the function in useEffect, display the ui through list rendering.
+

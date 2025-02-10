@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: poppins;
+}
+
+.underline-btn {
+  border-bottom: 1.5px solid black;
+  color: black;
+  padding-bottom: 12px;
+}
+
+.btn {
+  color: rgb(73, 73, 73);
+  border: 1px solid black;
+  padding: 15px 70px;
+}
+
+.box1 {
+  background-image: url("./assests/blog-box1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-position: center;
+}
+
+.box2 {
+  background-image: url("./assests/blog-box2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-position: center;
+}
+.box3 {
+  background-image: url("./assests/blog-box3.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  background-position: center;
+}
+
+/* .poppins {
+  font-family: var(--poppins);
+}
+
+.poppins-thin {
+  font-family: poppins-regular;
+}
+
+.poppins-thin2 {
+  font-family: poppins-thin;
+}
+
+.poppins-light {
+  font-family: poppins-light;
+}
+
+.poppins-bold {
+  font-family: poppins-bold;
+  /* font-weight: lighter; */
+/* } */
+
+.bg-insta {
+  background-image: url(./assests/instagram-bg.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.shop-herosection {
+  background-image: url(./assests/shop-bg.png);
+}
+
+.inp {
+  border: 1px solid #9f9f9f;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+
+.btn2 {
+  border: 1.5px solid black;
+  padding: 15px 30px;
+  border-radius: 15px;
+}
+
+@keyframes sidepop {
+  from {
+    right: -417px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes sidepopend {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -417px;
+  }
+}
+
+
+@keyframes pop {
+  0% { transform: scale(0.95); opacity: 0; }
+  25% { transform: scale(1.02); opacity: 1; }
+  50% {transform: scale(1); opacity: 1;}
+  75% {transform: scale(1.02); opacity: 1;}
+  100% { transform: scale(0.95); opacity: 0; }
+}
+.animate-pop { animation: pop 2s ease-in-out; }
